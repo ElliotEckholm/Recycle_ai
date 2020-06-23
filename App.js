@@ -4,8 +4,6 @@ import { RNCamera } from 'react-native-camera';
 import firestore from '@react-native-firebase/firestore';
 import Modal from 'react-native-modal';
 
-const imageLabelCollection = firestore().collection('imageLabel');
-
 console.disableYellowBox = true;
 
 export default class FetchExample extends React.Component {
