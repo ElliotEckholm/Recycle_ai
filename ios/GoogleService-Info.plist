@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>956998619505-n5mfua6i4mlqqf5uobbtvfi0sk7a0v0e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.956998619505-n5mfua6i4mlqqf5uobbtvfi0sk7a0v0e</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCIePGVg9BGo7_WfVUUClTSrO3QXf_ybvw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>956998619505</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.cryptanna.recycle-ai</string>
+	<key>PROJECT_ID</key>
+	<string>recycle-ai</string>
+	<key>STORAGE_BUCKET</key>
+	<string>recycle-ai.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:956998619505:ios:c35713e994e6e87551e6d0</string>
+	<key>DATABASE_URL</key>
+	<string>https://recycle-ai.firebaseio.com</string>
+</dict>
+</plist>
