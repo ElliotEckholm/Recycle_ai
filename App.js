@@ -18,7 +18,6 @@ export default class FetchExample extends React.Component {
       dataSource: '',
       top_prediction: '',
       top_prediction_confidence: null,
-
       backendURL: '',
     }
   }
@@ -26,7 +25,6 @@ export default class FetchExample extends React.Component {
 
  doPostCallback(imageURL){
     console.log("\nPost Callback");
-    // imageURL =
     console.log(imageURL);
 
     let body = new FormData();
@@ -47,8 +45,6 @@ export default class FetchExample extends React.Component {
 
         var all_predictions = (response.predictions);
         var top_prediction = response.predictions[0];
-        // console.log("Top Prediction: ")
-        // console.log(top_prediction)
 
         this.setState({
           isLoading: false,
@@ -56,7 +52,7 @@ export default class FetchExample extends React.Component {
           top_prediction: response.predictions[0][0],
           top_prediction_confidence: Math.round(100 * response.predictions[0][1]),
         })
-
+        //Add image and prediction to firebase database
         firestore()
          .collection('imageLabelCollection')
          .add({
@@ -67,8 +63,6 @@ export default class FetchExample extends React.Component {
            console.log('image and label added!');
          });
 
-
-
       })
       .catch(error => {
         console.log("upload error", error);
@@ -76,42 +70,6 @@ export default class FetchExample extends React.Component {
       });
 
 	}
-
-
-	doGetCallback() {
-    var imgUrl = 'https://media4.manhattan-institute.org/sites/cj/files/seattle-trash-crisis.jpg';
-		var xmlhttp = new XMLHttpRequest();
-		var url = "https:/ylambda.io/sortai/classify-url?url=" + encodeURIComponent(imgUrl);
-
-    console.log("\n\n\nURL");
-    console.log(url);
-
-  	xmlhttp.open('GET', url, true);
-		xmlhttp.onreadystatechange = function() {
-  		if (xmlhttp.readyState == 4) {
-  			if(xmlhttp.status == 200) {
-  			  var obj = JSON.parse(xmlhttp.responseText);
-  			  var top_prediction = obj.predictions[0][0];
-  				console.log(obj);
-  				console.log("calling set label with", top_prediction);
-          this.setState({
-            isLoading: false,
-            dataSource: top_prediction,
-          })
-  			 }
-  		}
-		}.bind(this);
-
-    xmlhttp.send(null);
-	}
-
-
-
-  componentDidMount(){
-    // this.doGetCallback();
-
-
-  }
 
   takePicture = async() => {
    if (this.camera) {
@@ -127,7 +85,6 @@ export default class FetchExample extends React.Component {
 
    }
  };
-
 
   render() {
     return (
@@ -199,8 +156,6 @@ const styles = StyleSheet.create({
     position: 'relative',
     opacity: 1.0,
     padding: 10,
-    // borderWidth: 2,
-    // borderColor: 'white',
   },
   preview: {
     flex: 1.0,
@@ -224,7 +179,6 @@ const styles = StyleSheet.create({
   },
   PredictionContainer: {
     flex: 0.3,
-    // backgroundColor: '#cef5ce',
     backgroundColor: 'white',
   },
 });
