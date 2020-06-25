@@ -85,6 +85,8 @@ target 'Recycle_ai' do
 
   pod 'react-native-camera', :path => '../node_modules/react-native-camera'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'Recycle_aiTests' do
     inherit! :complete
     # Pods for testing
